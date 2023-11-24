@@ -1,6 +1,7 @@
 const mario = document.getElementById("mario");
 const pipe = document.getElementById("pipe");
 const clouds = document.getElementById("clouds");
+const gameover = document.getElementById("gameover");
 let gameStatus = "playing";
 let jumpCounterBox = document.getElementById("jumpCounter");
 let jumpCounter = 0;
@@ -22,6 +23,9 @@ const loop = setInterval(() => {
     if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
         document.getElementById("audio").play();
         
+        gameover.classList.add("gameover-animation")
+        gameover.style.top = "156px";
+
         pipe.style.animation = "none";
         pipe.style.left = `${pipePosition}px`;
 
@@ -31,7 +35,7 @@ const loop = setInterval(() => {
         clouds.style.animation = "none";
         clouds.style.left = `${cloudsPosition}px`;
 
-        mario.src = "/images/game-over.png";
+        mario.src = "../images/game-over.png";
         mario.style.width = "75px";
         mario.style.marginLeft = "50px";
 

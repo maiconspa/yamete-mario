@@ -108,3 +108,24 @@ body {
 #counter {
     display: flex;
 }
+
+#gameover {
+    position: absolute;
+    margin: auto auto;
+    top: 350px;
+    left: calc(50% - 400px);
+}
+
+.gameover-animation {
+    animation: gameover ease-out 2s;
+}
+
+@keyframes gameover {
+    from {
+        top: 350px;
+    }
+    
+    to {
+        top: 156px;
+    }
+}
